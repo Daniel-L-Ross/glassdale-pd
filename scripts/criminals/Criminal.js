@@ -4,8 +4,8 @@ export const criminal = (convict) => {
             <div class="crimnal__name">${convict.name}</div>
             <div class="crimnal__age">${convict.age}</div>
             <div class="criminal__conviction">${convict.conviction}</div>
-            <div class="criminal__term">${convict.incarceration.start}</div>
-            <div class="criminal__term">${convict.incarceration.end}</div>
+            <div class="criminal__term">${new Date(convict.incarceration.start).toLocaleDateString('en-US')}</div>
+            <div class="criminal__term">${new Date(convict.incarceration.end).toLocaleDateString('en-US')}</div>
         </div>
     `
 }

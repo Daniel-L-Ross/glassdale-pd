@@ -6,10 +6,15 @@ export const criminalList = () => {
         .then(() => {
             const criminals = useCriminals()
             const contentElement = document.querySelector('.criminalsContainer')
-            let criminalHTMLRep = "<h1>Test</h1>"
+            let criminalHTMLRep = ""
             for (const convict of criminals) {
                 criminalHTMLRep += criminal(convict)
             }
-            contentElement.innerHTML += criminalHTMLRep
+            contentElement.innerHTML +=`
+            <h3>Glassdale Criminals</h3>
+            <section class="criminalList">
+            ${criminalHTMLRep}
+            </section>
+            ` 
         })
 }
