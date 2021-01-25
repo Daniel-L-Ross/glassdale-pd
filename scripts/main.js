@@ -1,12 +1,7 @@
-// import { getOfficers, useOfficers } from './officers/OfficerProvider.js'
-// import { getCriminals, useCriminals } from './criminals/CriminalProvider.js'
 import { criminalList } from './criminals/CriminalList.js'
+import { useConvictions, getConvictions } from './convictions/ConvictionProvider.js'
 
-// getOfficers()
-// const officerData = useOfficers()
+// criminalList()
 
-// const criminalData = useCriminals()
-// console.log(typeof(criminalData))
-// console.log(criminalData)
-
-criminalList()
+getConvictions()
+// useConvictions()
