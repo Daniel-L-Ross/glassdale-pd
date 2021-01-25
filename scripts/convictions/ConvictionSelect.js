@@ -10,8 +10,16 @@ export const ConvictionSelect = () => {
         })
 }
 
-const render = convictionsCollection => {
-    const convictionItems = {
-
-    } 
+const render = (convictionsCollection) => {
+    contentTarget.innerHTML = `
+    <select class="dropdown" id ="crimeSelect">
+        <option value="0">Please select a crime...</option>
+    ${
+        convictionsCollection.map(convictionObject => {
+            const convictionName = convictionObject.name
+            return `<option>${convictionName}</option>`
+        })
+        }
+    </select>
+    `
 }
