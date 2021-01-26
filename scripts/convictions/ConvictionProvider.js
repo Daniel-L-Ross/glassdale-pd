@@ -8,7 +8,7 @@ export const getConvictions = () => {
         .then(
             parsedConvictions => {
                 // debugger
-                console.table(parsedConvictions)
+                // console.table(parsedConvictions)
                 convictions = parsedConvictions
             }
         )

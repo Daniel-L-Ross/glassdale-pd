@@ -14,10 +14,13 @@ eventHub.addEventListener('crimeSelected', event => {
 
 const contentElement = document.querySelector('.criminalsContainer')
 const render = (criminalsToDisplay) => {
+    debugger
     contentElement.innerHtML = `
     <h3>Glassdale Criminals</h3>
     <section class="criminalList">
-    ${criminalsToDisplay.map(convictObject => criminal(convictObject)).join("")}
+    ${
+        criminalsToDisplay.map(convictObject => criminal(convictObject)).join("")
+    }
     </section>
     `
 }
@@ -28,8 +31,6 @@ export const criminalList = () => {
     getCriminals()
     .then(() => {
         const appStateCriminals = useCriminals()
-        debugger
-        
             render(appStateCriminals)
         })
 }
