@@ -1,20 +1,27 @@
 import { getCriminals, useCriminals } from './CriminalProvider.js'
 import { criminal } from './Criminal.js'
+import { useConvictions } from '../convictions/ConvictionProvider.js'
 
 const eventHub = document.querySelector(".container")
+const contentElement = document.querySelector('.criminalsContainer')
 
-eventHub.addEventListener("crimeChosen", event => { 
+eventHub.addEventListener("crimeChosen", crimeChosenEvent => { 
     console.log("A crime selection was heard")
-    if (event.detail.crimeThatWasChosen !== "0") {
-        const appStateCriminals = useCriminals()
-        const matchingCriminals = appStateCriminals.filter(currentConvict => {
-            return currentConvict.conviction === event.detail.crimeThatWasChosen
+    if (crimeChosenEvent.detail.crimeThatWasChosen !== "0") {
+        const convictionsArray = useConvictions()
+        
+        const chosenConvictionObject = convictionsArray.find(convictionObj => {
+            console.log("function is checking", convictionObj)
+            return convictionObj.id === parseInt(crimeChosenEvent.detail.crimeThatWasChosen)
         })
-        render(matchingCriminals)
+
+        console.log(chosenConvictionObject)
+        const criminalsArray = useCriminals()
+        const filteredCriminalsArray = criminalsArray.filter(criminalObj => criminalObj.conviction === chosenConvictionObject.name)
+        render(filteredCriminalsArray)
     }
 })
 
-const contentElement = document.querySelector('.criminalsContainer')
 
 const render = (criminalsToDisplay) => {
     const convertedCriminals = criminalsToDisplay.map(convictObject => {
