@@ -3,8 +3,10 @@ import { criminal } from './Criminal.js'
 
 const eventHub = document.querySelector(".container")
 
-eventHub.addEventListener('crimeSelected', event => {
+eventHub.addEventListener("crimeChosen", event => { 
+    console.log("A crime selection was heard")
     if (event.detail.crimeThatWasChosen !== "0") {
+        const appStateCriminals = useCriminals()
         const matchingCriminals = appStateCriminals.filter(currentConvict => {
             return currentConvict.conviction === event.detail.crimeThatWasChosen
         })
@@ -31,8 +33,6 @@ const render = (criminalsToDisplay) => {
     </section>
     `
 }
-
-
 
 export const criminalList = () => {
     // debugger
