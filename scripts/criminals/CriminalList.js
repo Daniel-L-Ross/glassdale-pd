@@ -22,6 +22,17 @@ eventHub.addEventListener("crimeChosen", crimeChosenEvent => {
     }
 })
 
+// event listener to sort criminals by arresting officer and populate the dom
+eventHub.addEventListener("officerChosen", officerChosenEvent => { 
+    console.log("An officer selection was heard")
+    if (officerChosenEvent.detail.crimeThatWasChosen !== "0") {
+
+        const criminalsArray = useCriminals()
+        const CriminalsByOfficerArray = criminalsArray.filter(criminalObj => criminalObj.arrestingOfficer === officerChosenEvent.detail.officerThatWasChosen)
+        render(CriminalsByOfficerArray)
+    }
+})
+
 
 const render = (criminalsToDisplay) => {
     const convertedCriminals = criminalsToDisplay.map(convictObject => {
