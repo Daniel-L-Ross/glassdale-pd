@@ -5,7 +5,7 @@ const contentTarget = document.querySelector(".filters__crime")
 
 eventHub.addEventListener("change", changeEvent => {
     if (changeEvent.target.id === "crimeSelect") { 
-        console.log("you selected a crime:", event.target.value)
+        console.log("you selected a crime:", changeEvent.target.value)
         const crimeSelected = new CustomEvent("crimeChosen", {
             detail: {
                 crimeThatWasChosen: changeEvent.target.value
