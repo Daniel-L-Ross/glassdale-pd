@@ -16,7 +16,9 @@ const render = (notesArray) => {
     })
     const combinedNoteHTML = convertedNotes.join("")
     // debugger
-    contentTarget.innerHTML = combinedNoteHTML
+    contentTarget.innerHTML = `
+
+    ${combinedNoteHTML}`
 }
 
 export const NoteList = () => {
