@@ -5,8 +5,11 @@ const contentTarget = document.querySelector('.noteList')
 const eventHub = document.querySelector('.container')
 
 eventHub.addEventListener("showNotesClicked", customEvent => {
-    customEvent.preventDefault()
     NoteList()
+})
+
+eventHub.addEventListener("hideNotesClicked", customEvent => {
+    contentTarget.innerHTML = ""
 })
 
 const render = (notesArray) => {
@@ -15,16 +18,21 @@ const render = (notesArray) => {
         return noteHTML
     })
     const combinedNoteHTML = convertedNotes.join("")
-    // debugger
-    contentTarget.innerHTML = combinedNoteHTML
+    contentTarget.innerHTML = `
+
+    ${combinedNoteHTML}`
 }
 
 export const NoteList = () => {
-    // debugger
     getNotes()
     .then(() => {
         const allNotes = useNotes()
-        console.log(allNotes)
         render(allNotes)
     })
 }
+
+eventHub.addEventListener("noteStateChanged", event => {
+    if (contentTarget.innerHTML !== "") {
+        NoteList()
+    }
+}) 

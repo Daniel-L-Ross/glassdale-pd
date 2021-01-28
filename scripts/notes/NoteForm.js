@@ -6,11 +6,15 @@ const contentTarget = document.querySelector(".noteFormContainer")
 
 const renderNote = () => {
     contentTarget.innerHTML = `
-
+    <h3>Case Notes</h3>
     <form action="">
     <fieldset>
         <label for="noteDate">Date of Entry</label>
         <input type="date" name="noteDate" id="noteDate" class="formOption">
+    </fieldset>
+    <fieldset>
+        <label for="noteAuthor">Author Name</label>
+        <input type="text" name="noteAuthor" id="noteAuthor" class="formOption">
     </fieldset>
     <fieldset>
         <label for="noteSuspect">Suspect Name</label>
@@ -34,6 +38,7 @@ eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveNote") {
         const newNote = {
             date: document.getElementById("noteDate").value,
+            author: document.getElementById("noteAuthor").value,
             suspect: document.getElementById("noteSuspect").value,
             text: document.getElementById("noteText").value
         }
