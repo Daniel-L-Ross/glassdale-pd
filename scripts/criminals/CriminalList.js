@@ -40,10 +40,8 @@ const render = (criminalsToDisplay) => {
         return criminalHTML
     })
 
-    // console.log(convertedCriminals, Array.isArray(convertedCriminals))
-
     const combinedCriminalHTML = convertedCriminals.join("");
-    // debugger
+
     contentElement.innerHTML = `
     <h3>Glassdale Criminals</h3>
     <section class="criminalList">
@@ -53,7 +51,6 @@ const render = (criminalsToDisplay) => {
 }
 
 export const criminalList = () => {
-    // debugger
     getCriminals()
     .then(() => {
         const appStateCriminals = useCriminals()

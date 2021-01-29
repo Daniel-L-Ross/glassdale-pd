@@ -27,14 +27,6 @@ eventHub.addEventListener("click", clickEvent => {
                 criminalSelected: idCheck[1]
             }
         })
+        eventHub.dispatchEvent(criminalAlibiClicked)
     }
 })
-
-// eventHub.addEventListener("click", clickEvent => {
-//     clickEvent.preventDefault()
-//     if (clickEvent.target.id === "hideNotes") {
-//         console.log("Hide notes button clicked")
-//         const hideButtonClicked = new CustomEvent("hideNotesClicked")
-//         eventHub.dispatchEvent(hideButtonClicked)
-//     }
-// })
