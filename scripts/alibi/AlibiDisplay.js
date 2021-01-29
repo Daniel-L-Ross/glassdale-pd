@@ -4,20 +4,20 @@ const eventHub = document.querySelector('.container')
 
 
 const criminalKnownAssociates = (criminalId) => {
-    let knownAssociates = []
-    getCriminals()
-    .then(() => {
-        const criminalArray = useCriminals()
+    let criminalArray = useCriminals()
 
-
+    const chosenCriminal = criminalArray.find(criminalObject => {
+        console.log(criminalObject)
+        return criminalObject.id === criminalId
     })
 
-    return knownAssociates
+    debugger
+    return chosenCriminal
 }
 
 eventHub.addEventListener('alibiClicked', alibiClickEvent => {
-    const criminalId = alibiClickEvent.detail.criminalSelected
+    const criminalId = parseInt(alibiClickEvent.detail.criminalSelected)
 
-    const newVariableName = criminalKnownAssociates(criminalId)
-    console.log(newVariableName)
+    const getCorrectCriminal = criminalKnownAssociates(criminalId)
+    console.log('getCorrectCriminal: ', getCorrectCriminal);
 })
