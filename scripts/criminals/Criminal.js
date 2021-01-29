@@ -19,9 +19,7 @@ const eventHub = document.querySelector('.container')
 // even listener for Alibi button
 eventHub.addEventListener("click", clickEvent => {
     const idCheck = clickEvent.target.id.split('--')
-    console.log(idCheck)
     if (idCheck[0] === "associates") {
-        console.log("alibi button clicked")
         const criminalAlibiClicked = new CustomEvent("alibiClicked", {
             detail: {
                 criminalSelected: idCheck[1]

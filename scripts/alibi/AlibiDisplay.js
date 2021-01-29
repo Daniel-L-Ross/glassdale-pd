@@ -1,11 +1,23 @@
-import { getCriminals, useCriminals } from './CriminalProvider.js'
+import { getCriminals, useCriminals } from '../criminals/CriminalProvider.js'
 
 const eventHub = document.querySelector('.container')
 
-const criminalKnownAssociates = () => {
 
+const criminalKnownAssociates = (criminalId) => {
+    let knownAssociates = []
+    getCriminals()
+    .then(() => {
+        const criminalArray = useCriminals()
+
+
+    })
+
+    return knownAssociates
 }
 
 eventHub.addEventListener('alibiClicked', alibiClickEvent => {
-    console.log('Alibi Click event heard', alibiClickEvent.detail.criminalSelected)
+    const criminalId = alibiClickEvent.detail.criminalSelected
+
+    const newVariableName = criminalKnownAssociates(criminalId)
+    console.log(newVariableName)
 })
