@@ -26,7 +26,6 @@ eventHub.addEventListener("crimeChosen", crimeChosenEvent => {
 eventHub.addEventListener("officerChosen", officerChosenEvent => { 
     console.log("An officer selection was heard")
     if (officerChosenEvent.detail.officerThatWasChosen !== "0") {
-
         const criminalsArray = useCriminals()
         const criminalsByOfficerArray = criminalsArray.filter(criminalObj => criminalObj.arrestingOfficer === officerChosenEvent.detail.officerThatWasChosen)
         render(criminalsByOfficerArray)

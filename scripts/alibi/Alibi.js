@@ -3,8 +3,10 @@ export const alibi = (associateObject) => {
     let associatesHTML = ''
     for (const associate of associateObject.known_associates) {
         associatesHTML +=`
-        <div class="associateName">Associate name: ${associate.name}</div>
-        <div class="associateAlibi">Alibi: ${associate.alibi}</div>
+        <div class="associateCard">
+            <div class="associateName">Associate name: ${associate.name}</div>
+            <div class="associateAlibi">Alibi: ${associate.alibi}</div>
+        </div>
         `
     }
 
