@@ -2,19 +2,20 @@
 @import './notes.css';
 @import './header.css';
 @import './alibi.css';
+@import './containerLeft.css';
 
-.container {
+.contentContainer{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.criminalsContainer {
+.contentContainer__left{
     flex: 0 1 65%;
     border: 4px dashed green;
 }
 
-.noteContainer {
+.contentContainer__right{
     flex: 0 1 30%;
     border: 4px solid slategray;
     padding: .2em;

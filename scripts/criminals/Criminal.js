@@ -3,7 +3,7 @@ export const criminal = (convict) => {
     const options = { year: 'numeric', month: '2-digit', day: '2-digit' }
     
     return `
-        <div class="criminal__card">
+        <div class="containerLeft__card">
             <div class="criminal__name">${convict.name}</div>
             <div class="crimnal__age">Age: ${convict.age}</div>
             <div class="criminal__conviction">Crime: ${convict.conviction}</div>
