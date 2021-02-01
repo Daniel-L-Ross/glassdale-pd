@@ -1,6 +1,7 @@
 import { getCriminals, useCriminals } from './CriminalProvider.js'
 import { criminal } from './Criminal.js'
 import { useConvictions } from '../convictions/ConvictionProvider.js'
+import { showWitnessesButton } from '../witnesses/ShowWitnessButton.js'
 
 const eventHub = document.querySelector(".container")
 const contentElement = document.querySelector('.contentContainer__left')
@@ -42,6 +43,7 @@ const render = (criminalsToDisplay) => {
     const combinedCriminalHTML = convertedCriminals.join("");
 
     contentElement.innerHTML = `
+    ${showWitnessesButton()}
     <h3>Glassdale Criminals</h3>
     <section class="criminalList">
     ${combinedCriminalHTML}
