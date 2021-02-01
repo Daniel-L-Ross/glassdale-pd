@@ -2,6 +2,7 @@
 @import './notes.css';
 @import './header.css';
 @import './alibi.css';
+@import './containerLeft.css';
 
 .contentContainer{
     display: flex;

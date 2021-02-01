@@ -45,7 +45,7 @@ const render = (criminalsToDisplay) => {
     contentElement.innerHTML = `
     ${showWitnessesButton()}
     <h3>Glassdale Criminals</h3>
-    <section class="criminalList">
+    <section class="containerLeft__list">
     ${combinedCriminalHTML}
     </section>
     `

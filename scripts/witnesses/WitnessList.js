@@ -10,14 +10,21 @@ const render = (witnessArray) => {
         return witnessHTML
     }).join("")
     contentElement.innerHTML = `
+    <h3>Witnesses</h3>
+    <section class="containerLeft__list">
     ${convertedWitnesses}
+    </section>
     `
 }
 
-export const witnessList = () => {
+const witnessList = () => {
     getWitnesses()
     .then(() => {
         const witnessData = useWitnesses()
         render(witnessData)
     })
 }
+
+eventHub.addEventListener("showWitnessesClicked", showWitnessEvent => {
+    witnessList()
+})
