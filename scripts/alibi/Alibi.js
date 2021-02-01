@@ -11,9 +11,8 @@ export const alibi = (associateObject) => {
     }
 
     return `
-            <div class="alibiDisplay__title">Suspect Under Investigation:</div>
-            <div class="suspectName">${associateObject.name}</div>
-            <div class="suspectAssociates">
+            <div class="alibiDisplay__title">Suspect Under Investigation:<br> ${associateObject.name}</div>
+            <div class="suspectName">
                 <div class="suspectAssociates__title">Known Associates:</div>
                 ${associatesHTML}
             </div>`
