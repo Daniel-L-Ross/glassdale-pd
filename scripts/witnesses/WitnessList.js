@@ -2,7 +2,7 @@ import { witness } from './Witness.js'
 import { getWitnesses, useWitnesses } from './WitnessProvider.js'
 
 const eventHub = document.querySelector(".container")
-const contentElement = document.querySelector('.criminalsContainer')
+const contentElement = document.querySelector('.contentContainer__left')
 
 const render = (witnessArray) => {
     const convertedWitnesses = witnessArray.map(witnessObject => {

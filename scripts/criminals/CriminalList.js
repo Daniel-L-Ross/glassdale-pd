@@ -3,7 +3,7 @@ import { criminal } from './Criminal.js'
 import { useConvictions } from '../convictions/ConvictionProvider.js'
 
 const eventHub = document.querySelector(".container")
-const contentElement = document.querySelector('.criminalsContainer')
+const contentElement = document.querySelector('.contentContainer__left')
 
 eventHub.addEventListener("crimeChosen", crimeChosenEvent => { 
     console.log("A crime selection was heard")
