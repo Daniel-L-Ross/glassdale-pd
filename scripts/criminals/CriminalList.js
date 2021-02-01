@@ -51,6 +51,11 @@ const render = (criminalsToDisplay) => {
     `
 }
 
+// this event listener renders criminals in place of the witnesses
+eventHub.addEventListener("showCriminalsClicked", showCriminalsEvent => {
+    criminalList()
+})
+
 export const criminalList = () => {
     getCriminals()
     .then(() => {

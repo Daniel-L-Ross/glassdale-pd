@@ -1,7 +1,7 @@
 const eventHub = document.querySelector(".container")
 
 export const showWitnessesButton = () => {
-    return `<button id="showWitnesses">Show Witnesses</button>`
+    return `<button id="showWitnesses" class="containerLeft__button">Show Witnesses</button>`
 }
 
 eventHub.addEventListener("click", clickEvent => {
