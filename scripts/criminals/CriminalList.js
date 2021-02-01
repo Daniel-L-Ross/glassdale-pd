@@ -26,7 +26,6 @@ eventHub.addEventListener("crimeChosen", crimeChosenEvent => {
 eventHub.addEventListener("officerChosen", officerChosenEvent => { 
     console.log("An officer selection was heard")
     if (officerChosenEvent.detail.officerThatWasChosen !== "0") {
-
         const criminalsArray = useCriminals()
         const criminalsByOfficerArray = criminalsArray.filter(criminalObj => criminalObj.arrestingOfficer === officerChosenEvent.detail.officerThatWasChosen)
         render(criminalsByOfficerArray)
@@ -40,10 +39,8 @@ const render = (criminalsToDisplay) => {
         return criminalHTML
     })
 
-    // console.log(convertedCriminals, Array.isArray(convertedCriminals))
-
     const combinedCriminalHTML = convertedCriminals.join("");
-    // debugger
+
     contentElement.innerHTML = `
     <h3>Glassdale Criminals</h3>
     <section class="criminalList">
@@ -53,7 +50,6 @@ const render = (criminalsToDisplay) => {
 }
 
 export const criminalList = () => {
-    // debugger
     getCriminals()
     .then(() => {
         const appStateCriminals = useCriminals()

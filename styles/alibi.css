@@ -1,0 +1,15 @@
+.alibiDisplay {
+    border: solid red 2px;
+
+}
+
+.alibiDisplay__title {
+    font: 1.2em bold Georgia, serif;
+    font-weight: bold;
+    text-align: center;
+    margin: 1em .5em;
+}
+
+.associateCard {
+margin: .5em .3em;
+}
