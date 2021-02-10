@@ -7,10 +7,10 @@ import './notes/NoteList.js'
 import './alibi/AlibiDisplay.js'
 import './witnesses/WitnessList.js'
 
+criminalList()
 ConvictionSelect()
 OfficerSelect()
 NoteForm()
-criminalList()
 ToggleNotesButton()
 
 // getWitnesses()

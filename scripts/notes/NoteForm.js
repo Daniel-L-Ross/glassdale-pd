@@ -1,10 +1,13 @@
 import { saveNote } from './NoteProvider.js'
+import { useCriminals } from '../criminals/CriminalProvider.js'
 
 const eventHub = document.querySelector(".container")
 
 const contentTarget = document.querySelector(".noteFormContainer")
 
 const renderNote = () => {
+    const criminalArray = useCriminals()
+debugger
     contentTarget.innerHTML = `
     <h3>Case Notes</h3>
     <form action="">
@@ -18,7 +21,9 @@ const renderNote = () => {
     </fieldset>
     <fieldset>
         <label for="noteSuspect">Suspect Name</label>
-        <input type="text" name="noteSuspect" id="noteSuspect" class="formOption">
+        <select id="noteForm--criminal" class="criminalSelect formOption">
+        ${criminalArray.map(criminal => `<option value="${ criminal.id }">${ criminal.name }</option>`).join("")}
+    </select>
     </fieldset>
     <fieldset>
         <label for="noteText">Case Note Entry</label>
@@ -39,7 +44,7 @@ eventHub.addEventListener("click", clickEvent => {
         const newNote = {
             date: document.getElementById("noteDate").value,
             author: document.getElementById("noteAuthor").value,
-            suspect: document.getElementById("noteSuspect").value,
+            criminalId: document.getElementById("noteSuspect").value,
             text: document.getElementById("noteText").value
         }
         saveNote(newNote)
