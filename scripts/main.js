@@ -6,9 +6,8 @@ import { ToggleNotesButton  } from './notes/ShowNotesButton.js'
 import './notes/NoteList.js'
 import './alibi/AlibiDisplay.js'
 import './witnesses/WitnessList.js'
-import { getCriminals } from './criminals/CriminalProvider.js'
 
-getCriminals().then(NoteForm)
+NoteForm()
 criminalList()
 ConvictionSelect()
 OfficerSelect()

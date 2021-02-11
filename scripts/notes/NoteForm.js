@@ -1,12 +1,12 @@
 import { saveNote } from './NoteProvider.js'
-import { useCriminals } from '../criminals/CriminalProvider.js'
+import { getCriminals, useCriminals } from '../criminals/CriminalProvider.js'
 
 const eventHub = document.querySelector(".container")
 
 const contentTarget = document.querySelector(".noteFormContainer")
 
-const renderNote = () => {
-    const criminalArray = useCriminals()
+const renderNote = (criminalArray) => {
+   
     
     contentTarget.innerHTML = `
     <h3>Case Notes</h3>
@@ -36,7 +36,11 @@ const renderNote = () => {
 }
 
 export const NoteForm = () => {
-    renderNote()
+    getCriminals()
+    .then(() => {
+        const criminalArray = useCriminals()
+        renderNote(criminalArray)
+    })
 }
 
 eventHub.addEventListener("click", clickEvent => {
