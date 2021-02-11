@@ -21,7 +21,7 @@ const renderNote = () => {
     </fieldset>
     <fieldset>
         <label for="noteSuspect">Suspect Name</label>
-        <select id="noteForm--criminal" class="criminalSelect formOption">
+        <select id="noteSuspect" class="criminalSelect formOption">
         <option value="0">Select A Criminal</option>
         ${criminalArray.map(criminal => `<option value="${ criminal.id }">${ criminal.name }</option>`).join("")}
     </select>
@@ -42,6 +42,7 @@ export const NoteForm = () => {
 eventHub.addEventListener("click", clickEvent => {
     clickEvent.preventDefault()
     if (clickEvent.target.id === "saveNote") {
+        debugger
         const newNote = {
             date: document.getElementById("noteDate").value,
             author: document.getElementById("noteAuthor").value,
