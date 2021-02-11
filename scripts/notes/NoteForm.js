@@ -6,7 +6,6 @@ const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".noteFormContainer")
 
 const renderNote = (criminalArray) => {
-   
     
     contentTarget.innerHTML = `
     <h3>Case Notes</h3>
@@ -46,11 +45,10 @@ export const NoteForm = () => {
 eventHub.addEventListener("click", clickEvent => {
     clickEvent.preventDefault()
     if (clickEvent.target.id === "saveNote") {
-        debugger
         const newNote = {
             date: document.getElementById("noteDate").value,
             author: document.getElementById("noteAuthor").value,
-            criminalId: document.getElementById("noteSuspect").value,
+            criminalId: parseInt(document.getElementById("noteSuspect").value),
             text: document.getElementById("noteText").value
         }
         saveNote(newNote)
