@@ -7,7 +7,7 @@ const contentTarget = document.querySelector(".noteFormContainer")
 
 const renderNote = () => {
     const criminalArray = useCriminals()
-debugger
+    
     contentTarget.innerHTML = `
     <h3>Case Notes</h3>
     <form action="">
@@ -22,6 +22,7 @@ debugger
     <fieldset>
         <label for="noteSuspect">Suspect Name</label>
         <select id="noteForm--criminal" class="criminalSelect formOption">
+        <option value="0">Select A Criminal</option>
         ${criminalArray.map(criminal => `<option value="${ criminal.id }">${ criminal.name }</option>`).join("")}
     </select>
     </fieldset>
