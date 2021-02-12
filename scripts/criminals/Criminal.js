@@ -3,20 +3,24 @@ export const criminal = (convict, facilities) => {
     const options = { year: 'numeric', month: '2-digit', day: '2-digit' }
     
     return `
-        <div class="containerLeft__card">
-            <div class="criminal__name">${convict.name}</div>
-            <div class="crimnal__age">Age: ${convict.age}</div>
-            <div class="criminal__conviction">Crime: ${convict.conviction}</div>
-            <div class="criminal__term">Term start: ${new Date(convict.incarceration.start).toLocaleDateString('en-US', options)}</div>
-            <div class="criminal__term">Term end: ${new Date(convict.incarceration.end).toLocaleDateString('en-US', options)}</div>
-            
-            <h2>Facilities</h2>
-                <ul>
-                    ${facilities.map(f => `<li> ${f.facilityName}</li>`).join("")}
-                </ul>
-            
-            <button id="associates--${convict.id}">Associate Alibis</button>
-        </div>
+    <div class="containerLeft__card">
+    <h4>${convict.name}</h4>
+    <div class="criminal__details">
+        <p>Convicted For: ${convict.conviction}</p>
+        <p>Incarcerated between:
+            ${new Date(convict.incarceration.start).toLocaleDateString('en-US', options)} and
+            ${new Date(convict.incarceration.end).toLocaleDateString('en-US', options)}
+        </p>
+        <p>Age: ${convict.age}</p>
+    <div class="criminal__facilities">
+    <h2>Facilities</h2>
+        <ul>
+            ${facilities.map(f => `<li> ${f.facilityName}</li>`).join("")}
+        </ul>
+    </div>
+    <button id="associates--${convict.id}">Associate Alibis</button>
+    </div>
+</div>
     `
 }
 
