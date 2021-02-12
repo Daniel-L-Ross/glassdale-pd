@@ -1,4 +1,4 @@
-import { getNotes, useNotes } from "./NoteProvider.js"
+import { getNotes, useNotes, deleteNote } from "./NoteProvider.js"
 import { NoteHTMLConverter } from "./Note.js"
 import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js"
 
@@ -32,7 +32,12 @@ const render = (notesArray, criminalsArray) => {
     contentTarget.innerHTML = `${combinedNoteHTML}`
 }
 
-
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteNote--")) {
+        const [prefix, id] = clickEvent.target.id.split("--")
+        deleteNote(id)
+    }
+})
 
 // this event listener updates the notelist with the note that
 // was just added, but only if the notes are already displayed
