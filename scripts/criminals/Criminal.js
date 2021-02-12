@@ -1,4 +1,4 @@
-export const criminal = (convict) => {
+export const criminal = (convict, facilities) => {
     // The const "options" is an object that can passed as an argument to toLocaleDateString. I use it here to make all days/months 2 digits.
     const options = { year: 'numeric', month: '2-digit', day: '2-digit' }
     
@@ -9,6 +9,12 @@ export const criminal = (convict) => {
             <div class="criminal__conviction">Crime: ${convict.conviction}</div>
             <div class="criminal__term">Term start: ${new Date(convict.incarceration.start).toLocaleDateString('en-US', options)}</div>
             <div class="criminal__term">Term end: ${new Date(convict.incarceration.end).toLocaleDateString('en-US', options)}</div>
+            
+            <h2>Facilities</h2>
+                <ul>
+                    ${facilities.map(f => `<li> ${f.facilityName}</li>`).join("")}
+                </ul>
+            
             <button id="associates--${convict.id}">Associate Alibis</button>
         </div>
     `
