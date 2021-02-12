@@ -1,81 +1,25 @@
 {
   "notes": [
     {
-      "date": "2021-01-20",
-      "suspect": "Test",
+      "date": "2021-02-11",
+      "author": "Dan",
+      "criminalId": 4,
       "text": "Test",
       "id": 1
     },
     {
-      "date": "2021-01-20",
-      "suspect": "Test2",
-      "text": "MOre text",
+      "date": "2020-02-12",
+      "author": "Dan",
+      "criminalId": 16,
+      "text": "New Note",
       "id": 2
     },
     {
-      "date": "2021-01-27",
-      "suspect": "Test3",
-      "text": "Even more text",
+      "date": "2021-02-11",
+      "author": "Dan",
+      "criminalId": 5,
+      "text": "Note text",
       "id": 3
-    },
-    {
-      "date": "2021-01-27",
-      "suspect": "Test",
-      "text": "?",
-      "id": 4
-    },
-    {
-      "date": "2021-01-27",
-      "suspect": "Test",
-      "text": "?",
-      "id": 5
-    },
-    {
-      "date": "2021-01-28",
-      "suspect": "Bryan",
-      "text": "Too many dad jokes...",
-      "id": 6
-    },
-    {
-      "date": "2021-01-28",
-      "suspect": "Scott",
-      "text": "Very sus",
-      "id": 7
-    },
-    {
-      "date": "2021-01-05",
-      "author": "Dan",
-      "suspect": "Sage",
-      "text": "Grievous barberly harm",
-      "id": 8
-    },
-    {
-      "date": "2021-01-06",
-      "author": "Dan",
-      "suspect": "Sage",
-      "text": "Grand theft.",
-      "id": 9
-    },
-    {
-      "date": "2021-01-05",
-      "author": "Captain Holt",
-      "suspect": "The Disco Strangler",
-      "text": "HE'S ON THE LOOSE",
-      "id": 10
-    },
-    {
-      "date": "",
-      "author": "",
-      "suspect": "",
-      "text": "",
-      "id": 11
-    },
-    {
-      "date": "2020-02-01",
-      "author": "Dan",
-      "suspect": "Jisie",
-      "text": "Very sus",
-      "id": 12
     }
   ]
 }

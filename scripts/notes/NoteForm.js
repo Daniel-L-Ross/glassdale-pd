@@ -1,10 +1,12 @@
 import { saveNote } from './NoteProvider.js'
+import { getCriminals, useCriminals } from '../criminals/CriminalProvider.js'
 
 const eventHub = document.querySelector(".container")
 
 const contentTarget = document.querySelector(".noteFormContainer")
 
-const renderNote = () => {
+const renderNote = (criminalArray) => {
+
     contentTarget.innerHTML = `
     <h3>Case Notes</h3>
     <form action="">
@@ -18,7 +20,10 @@ const renderNote = () => {
     </fieldset>
     <fieldset>
         <label for="noteSuspect">Suspect Name</label>
-        <input type="text" name="noteSuspect" id="noteSuspect" class="formOption">
+        <select id="noteSuspect" class="criminalSelect formOption">
+        <option value="0">Select A Criminal</option>
+        ${criminalArray.map(criminal => `<option value="${criminal.id}">${criminal.name}</option>`).join("")}
+    </select>
     </fieldset>
     <fieldset>
         <label for="noteText">Case Note Entry</label>
@@ -30,18 +35,36 @@ const renderNote = () => {
 }
 
 export const NoteForm = () => {
-    renderNote()
+    getCriminals()
+        .then(() => {
+            const criminalArray = useCriminals()
+            renderNote(criminalArray)
+        })
 }
 
 eventHub.addEventListener("click", clickEvent => {
     clickEvent.preventDefault()
     if (clickEvent.target.id === "saveNote") {
+        const date = document.getElementById("noteDate").value
+        const author = document.getElementById("noteAuthor").value
+        const criminalId = parseInt(document.getElementById("noteSuspect").value)
+        const text = document.getElementById("noteText").value
         const newNote = {
-            date: document.getElementById("noteDate").value,
-            author: document.getElementById("noteAuthor").value,
-            suspect: document.getElementById("noteSuspect").value,
-            text: document.getElementById("noteText").value
+            date: date,
+            author: author,
+            criminalId: criminalId,
+            text: text
         }
-        saveNote(newNote)
+        if (date === "") {
+            alert("Please fill in the DATE before saving a note.")
+        } else if (author === ""){
+            alert("Please fill in the Author Name before saving a note.")
+        } else if (criminalId === 0){
+            alert("Please select a criminal before saving a note.")
+        } else if (text === ""){
+            alert(`Please fill in the "Case Note Entry" section before saving a note.`)
+        } else {
+            saveNote(newNote)
+        }
     }
 })
