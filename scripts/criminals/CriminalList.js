@@ -2,6 +2,8 @@ import { getCriminals, useCriminals } from './CriminalProvider.js'
 import { criminal } from './Criminal.js'
 import { useConvictions } from '../convictions/ConvictionProvider.js'
 import { showWitnessesButton } from '../witnesses/ShowWitnessButton.js'
+import { getFacilities, useFacilites } from '../facility/FacilityProvider.js'
+import { getCriminalFacilities, useCriminalFacilities } from '../facility/CriminalFacilityProvider.js'
 
 const eventHub = document.querySelector(".container")
 const contentElement = document.querySelector('.contentContainer__left')
@@ -34,10 +36,19 @@ eventHub.addEventListener("officerChosen", officerChosenEvent => {
 })
 
 
-const render = (criminalsToDisplay) => {
-    const convertedCriminals = criminalsToDisplay.map(convictObject => {
-        const criminalHTML = criminal(convictObject)
-        return criminalHTML
+const render = (criminals, allFacilities, allRelationships) => {
+    // first, iterate over all criminals
+    const convertedCriminals = criminals.map(criminalObject => {
+        // second, filter all relationships by this criminal
+        const relatedFacilties = allRelationships.filter(cf => cf.criminalId === criminalObject.id)
+        
+        // third, take the relatedFacilities for this criminal and map then filter for correct facilities
+        const facilities = relatedFacilties.map(cf => {
+            const matchingFacilityObject = allFacilities.find(facility => facility.id === cf.facilityId)
+            return matchingFacilityObject
+        })
+
+        return criminal(criminalObject, facilities)
     })
 
     const combinedCriminalHTML = convertedCriminals.join("");
@@ -58,8 +69,12 @@ eventHub.addEventListener("showCriminalsClicked", showCriminalsEvent => {
 
 export const criminalList = () => {
     getCriminals()
+    .then(getFacilities)
+    .then(getCriminalFacilities)
     .then(() => {
         const appStateCriminals = useCriminals()
-            render(appStateCriminals)
+        const appStateFacilities = useFacilites()
+        const appStateCriminalFacilities = useCriminalFacilities()
+            render(appStateCriminals, appStateFacilities, appStateCriminalFacilities)
         })
 }
