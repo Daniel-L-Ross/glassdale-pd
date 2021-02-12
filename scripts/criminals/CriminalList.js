@@ -9,7 +9,6 @@ const eventHub = document.querySelector(".container")
 const contentElement = document.querySelector('.contentContainer__left')
 
 eventHub.addEventListener("crimeChosen", crimeChosenEvent => { 
-    console.log("A crime selection was heard")
     if (crimeChosenEvent.detail.crimeThatWasChosen !== "0") {
         const convictionsArray = useConvictions()
         
@@ -19,9 +18,11 @@ eventHub.addEventListener("crimeChosen", crimeChosenEvent => {
         })
 
         console.log(chosenConvictionObject)
-        // const criminalsArray = useCriminals()
-        const filteredCriminalsArray = useCriminals().filter(criminalObj => criminalObj.conviction === chosenConvictionObject.name)
-        render(filteredCriminalsArray)
+        const criminalsArray = useCriminals()
+        const stateFacilities = useFacilites()
+        const stateCriminalFacilities = useCriminalFacilities()
+        const filteredCriminalsArray = criminalsArray.filter(criminalObj => criminalObj.conviction === chosenConvictionObject.name)
+        render(filteredCriminalsArray, stateFacilities, stateCriminalFacilities)
     }
 })
 
@@ -30,8 +31,10 @@ eventHub.addEventListener("officerChosen", officerChosenEvent => {
     console.log("An officer selection was heard")
     if (officerChosenEvent.detail.officerThatWasChosen !== "0") {
         const criminalsArray = useCriminals()
+        const stateFacilities = useFacilites()
+        const stateCriminalFacilities = useCriminalFacilities()
         const criminalsByOfficerArray = criminalsArray.filter(criminalObj => criminalObj.arrestingOfficer === officerChosenEvent.detail.officerThatWasChosen)
-        render(criminalsByOfficerArray)
+        render(criminalsByOfficerArray, stateFacilities, stateCriminalFacilities)
     }
 })
 
