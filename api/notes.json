@@ -13,6 +13,13 @@
       "criminalId": 16,
       "text": "New Note",
       "id": 2
+    },
+    {
+      "date": "2021-02-11",
+      "author": "Dan",
+      "criminalId": 5,
+      "text": "Note text",
+      "id": 3
     }
   ]
 }

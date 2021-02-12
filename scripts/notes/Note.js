@@ -1,6 +1,5 @@
 export const NoteHTMLConverter = (noteObject, criminalsArray) => {
     const relatedCriminal = criminalsArray.find(criminal => criminal.id === noteObject.criminalId)
-    debugger
     return `
         <section class="note">
             <div class="note__text">Case Note: ${ noteObject.text }</div>
