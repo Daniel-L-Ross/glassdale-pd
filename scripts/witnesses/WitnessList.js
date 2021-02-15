@@ -9,7 +9,9 @@ const render = (witnessArray) => {
         return witnessHTML
     }).join("")
     contentElement.innerHTML = `
+    <div class="containerLeft__title">
     <h3>Witnesses</h3>
+    </div>
     <section class="containerLeft__list">
     ${convertedWitnesses}
     </section>

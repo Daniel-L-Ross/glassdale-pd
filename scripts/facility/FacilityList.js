@@ -36,7 +36,9 @@ const combinedFacilityHTML = convertedFacilities.join("")
 
 
 contentElement.innerHTML = `
+<div class="containerLeft__title">
 <h3>Detention Facilities</h3>
+</div>
     <section class="containerLeft__list">
 ${combinedFacilityHTML}
 <section>

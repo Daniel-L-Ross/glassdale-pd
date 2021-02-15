@@ -56,7 +56,9 @@ const render = (criminals, allFacilities, allRelationships) => {
     const combinedCriminalHTML = convertedCriminals.join("");
 
     contentElement.innerHTML = `
+    <div class="containerLeft__title">
     <h3>Glassdale Criminals</h3>
+    </div>
     <section class="containerLeft__list">
     ${combinedCriminalHTML}
     </section>

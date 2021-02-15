@@ -1,3 +1,10 @@
 .buttonBar {
     flex: 0 1 40%
 }
+.containerLeft__button {
+    height: 4em;
+    width: 10em;
+    border: none;
+    margin: 0 .5em;
+
+}
