@@ -18,8 +18,8 @@
 }
 
 .containerLeft__content{
-    /* flex: 0 1 65%; */
     border: 4px dashed green;
+    order: 2;
 }
 
 .contentContainer__right{

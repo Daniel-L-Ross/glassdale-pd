@@ -24,7 +24,7 @@ const convertedFacilities = facilitiesArray.map(facilityObject => {
     })
 
     const criminalHTML = `<div class="containerLeft__card" id="facilityId--${facilityObject.id}">
-    <h3>${facilityObject.facilityName}</h3>
+    <h4>${facilityObject.facilityName}</h4>
     <h4>Criminals</h4>
     <ul>
     ${criminals.map(c => `<li>${c.name}</li>`).join("")}

@@ -6,7 +6,8 @@ header {
 
 .filters {
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-between; */
     flex-wrap: wrap;
-    flex: 1 1 100%;
+    flex: 1 1 40%;
+    order: 1;
 }
