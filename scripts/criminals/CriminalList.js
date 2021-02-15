@@ -6,7 +6,7 @@ import { getFacilities, useFacilites } from '../facility/FacilityProvider.js'
 import { getCriminalFacilities, useCriminalFacilities } from '../facility/CriminalFacilityProvider.js'
 
 const eventHub = document.querySelector(".container")
-const contentElement = document.querySelector('.contentContainer__left')
+const contentElement = document.querySelector('.containerLeft__content')
 
 eventHub.addEventListener("crimeChosen", crimeChosenEvent => { 
     if (crimeChosenEvent.detail.crimeThatWasChosen !== "0") {

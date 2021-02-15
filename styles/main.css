@@ -3,6 +3,7 @@
 @import './header.css';
 @import './alibi.css';
 @import './containerLeft.css';
+@import './buttonBar.css';
 
 .contentContainer{
     display: flex;
@@ -10,8 +11,14 @@
     justify-content: space-between;
 }
 
-.contentContainer__left{
+.contentContainer__left {
+    display: flex;
+    flex-wrap: wrap;
     flex: 0 1 65%;
+}
+
+.containerLeft__content{
+    /* flex: 0 1 65%; */
     border: 4px dashed green;
 }
 
