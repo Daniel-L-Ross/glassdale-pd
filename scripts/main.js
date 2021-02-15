@@ -12,8 +12,3 @@ criminalList()
 ConvictionSelect()
 OfficerSelect()
 ToggleNotesButton()
-
-
-// getWitnesses()
-// .then(console.log(useWitnesses))
-
