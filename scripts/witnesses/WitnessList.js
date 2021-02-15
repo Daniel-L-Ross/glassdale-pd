@@ -1,6 +1,5 @@
 import { witness } from './Witness.js'
 import { getWitnesses, useWitnesses } from './WitnessProvider.js'
-import { showCriminalsButton } from '../criminals/ShowCriminalsButton.js'
 const eventHub = document.querySelector(".container")
 const contentElement = document.querySelector('.containerLeft__content')
 
@@ -10,7 +9,6 @@ const render = (witnessArray) => {
         return witnessHTML
     }).join("")
     contentElement.innerHTML = `
-    ${showCriminalsButton()}
     <h3>Witnesses</h3>
     <section class="containerLeft__list">
     ${convertedWitnesses}

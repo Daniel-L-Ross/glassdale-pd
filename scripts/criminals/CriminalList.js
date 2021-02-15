@@ -1,7 +1,6 @@
 import { getCriminals, useCriminals } from './CriminalProvider.js'
 import { criminal } from './Criminal.js'
 import { useConvictions } from '../convictions/ConvictionProvider.js'
-import { showWitnessesButton } from '../witnesses/ShowWitnessButton.js'
 import { getFacilities, useFacilites } from '../facility/FacilityProvider.js'
 import { getCriminalFacilities, useCriminalFacilities } from '../facility/CriminalFacilityProvider.js'
 
@@ -57,7 +56,6 @@ const render = (criminals, allFacilities, allRelationships) => {
     const combinedCriminalHTML = convertedCriminals.join("");
 
     contentElement.innerHTML = `
-    ${showWitnessesButton()}
     <h3>Glassdale Criminals</h3>
     <section class="containerLeft__list">
     ${combinedCriminalHTML}
