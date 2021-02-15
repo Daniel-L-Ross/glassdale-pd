@@ -9,7 +9,6 @@ eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "showFacilities"){
         const showFacilitiesClicked = new CustomEvent("facilitiesButtonClicked")
         eventHub.dispatchEvent(showFacilitiesClicked)
-        console.log("Show Facilities clicked")
     }
 })
 
