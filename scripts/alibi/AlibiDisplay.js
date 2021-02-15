@@ -22,7 +22,6 @@ eventHub.addEventListener('alibiClicked', alibiClickEvent => {
     const criminalId = parseInt(alibiClickEvent.detail.criminalSelected)
 
     const getCorrectCriminal = criminalKnownAssociates(criminalId)
-    console.log('getCorrectCriminal: ', getCorrectCriminal);
 
     render(getCorrectCriminal)
 })

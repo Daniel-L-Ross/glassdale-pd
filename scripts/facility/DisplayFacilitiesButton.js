@@ -5,6 +5,12 @@ const showFacilitiesButton = () => {
     return `<button id="showFacilities" class="containerLeft__button">Show Facilities</button>`
 }
 
-eventHub.addEventListener
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "showFacilities"){
+        const showFacilitiesClicked = new CustomEvent("facilitiesButtonClicked")
+        eventHub.dispatchEvent(showFacilitiesClicked)
+        console.log("Show Facilities clicked")
+    }
+})
 
 contentTarget.innerHTML += showFacilitiesButton()
