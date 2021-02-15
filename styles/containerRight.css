@@ -2,9 +2,12 @@
     background-color:rgb(94,138,213);
     display: flex;
     justify-content: center;
+    flex: 0 1 100%;
 }
 
 .contentContainer__right {
+    display: flex;
+    flex-direction: column;
     position: sticky;
     background-color: rgb(112,128,143);
     align-self: start;
@@ -27,4 +30,20 @@
     border: none;
     margin: 0 .5em;
 
+}
+
+.noteFormContainer > h3 {
+    background-color: rgb(255, 255, 255, .2);
+    margin: 0;
+    padding: .5em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+#saveNote {
+    width: 75%;
+    margin: 0 auto;
 }
