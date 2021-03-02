@@ -16,5 +16,5 @@ eventHub.addEventListener("click", clickEvent => {
 })
 
 export const ToggleNotesButton = () => {
-    contentTarget.innerHTML = "<button id='showNotes'>Show Notes</button><button id='hideNotes'>Hide Notes</button>"
+    contentTarget.innerHTML = `<button id='showNotes' class="containerRight__button">Show Notes</button><button id='hideNotes' class="containerRight__button">Hide Notes</button>`
 }

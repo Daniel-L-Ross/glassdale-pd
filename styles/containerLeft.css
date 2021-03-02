@@ -1,3 +1,39 @@
+.contentContainer__left {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 65%;
+}
+
+.containerLeft__content{
+    background-color: rgb(241, 213, 146);
+    border-radius: 4pt;
+    order: 2;
+    min-height: 90vh;
+}
+
+
+.containerLeft__navbar {
+    display: flex;
+    width: 100%;
+    position: sticky;
+    align-self: start;
+    top: 0;
+    background-color: rgb(94, 138, 214);
+    
+}
+
+.containerLeft__title {
+    background-color: rgb(241, 213, 146);
+    position: sticky;
+    align-self: start;
+    top: 3.3em;
+}
+
+.containerLeft__title > h3 {
+    background-color: rgb(255, 255, 255, .2);
+    margin: 0;
+    padding: .5em;
+}
 .containerLeft__list {
     display: flex;
     flex-wrap: wrap;
@@ -6,11 +42,12 @@
 
 .containerLeft__card {
     flex: 0 1 30%;
-    border: .01em solid black;
+    border-radius: 4pt;
     margin: .7em 4em;
     font-size: 1.2em;
     padding: .5em;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
+    background-color: whitesmoke;
 }

@@ -13,7 +13,7 @@ eventHub.addEventListener("hideNotesClicked", customEvent => {
     contentTarget.innerHTML = ""
 })
 
-export const NoteList = () => {
+const NoteList = () => {
     getNotes()
     .then(getCriminals)
     .then(() => {

@@ -13,7 +13,7 @@ export const criminal = (convict, facilities) => {
         </p>
         <p>Age: ${convict.age}</p>
     <div class="criminal__facilities">
-    <h2>Facilities</h2>
+    <h4>Facilities</h4>
         <ul>
             ${facilities.map(f => `<li> ${f.facilityName}</li>`).join("")}
         </ul>

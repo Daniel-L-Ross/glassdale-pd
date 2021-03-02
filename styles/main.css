@@ -1,31 +1,29 @@
 @import './criminals.css';
-@import './notes.css';
+@import './containerRight.css';
 @import './header.css';
 @import './alibi.css';
 @import './containerLeft.css';
+@import './buttonBar.css';
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 
 .contentContainer{
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
+    align-items: str;
     justify-content: space-between;
+    flex: 1 0 auto;
 }
-
-.contentContainer__left{
-    flex: 0 1 65%;
-    border: 4px dashed green;
-}
-
-.contentContainer__right{
-    flex: 0 1 30%;
-    border: 4px solid slategray;
-    padding: .2em;
-}
-/* 
-.noteFormContainer {
-    flex: 0 1 100%
-} */
 
 h3 {
     text-align: center;
     font-size: 2em;
+    margin: 0;
+    display: block;
 }

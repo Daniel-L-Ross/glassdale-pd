@@ -1,6 +1,7 @@
 const eventHub = document.querySelector(".container")
+const contentTarget =document.querySelector(".buttonBar")
 
-export const showCriminalsButton = () => {
+const showCriminalsButton = () => {
     return `<button id="showCriminals" class="containerLeft__button">Show Criminals</button>`
 }
 
@@ -10,3 +11,5 @@ eventHub.addEventListener("click" , clickEvent => {
         eventHub.dispatchEvent(criminalsButtonClicked)
     }
 })
+
+contentTarget.innerHTML += showCriminalsButton()

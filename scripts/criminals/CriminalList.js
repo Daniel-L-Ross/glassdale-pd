@@ -1,12 +1,11 @@
 import { getCriminals, useCriminals } from './CriminalProvider.js'
 import { criminal } from './Criminal.js'
 import { useConvictions } from '../convictions/ConvictionProvider.js'
-import { showWitnessesButton } from '../witnesses/ShowWitnessButton.js'
 import { getFacilities, useFacilites } from '../facility/FacilityProvider.js'
 import { getCriminalFacilities, useCriminalFacilities } from '../facility/CriminalFacilityProvider.js'
 
 const eventHub = document.querySelector(".container")
-const contentElement = document.querySelector('.contentContainer__left')
+const contentElement = document.querySelector('.containerLeft__content')
 
 eventHub.addEventListener("crimeChosen", crimeChosenEvent => { 
     if (crimeChosenEvent.detail.crimeThatWasChosen !== "0") {
@@ -28,7 +27,7 @@ eventHub.addEventListener("crimeChosen", crimeChosenEvent => {
 
 // event listener to sort criminals by arresting officer and populate the dom
 eventHub.addEventListener("officerChosen", officerChosenEvent => { 
-    console.log("An officer selection was heard")
+
     if (officerChosenEvent.detail.officerThatWasChosen !== "0") {
         const criminalsArray = useCriminals()
         const stateFacilities = useFacilites()
@@ -57,8 +56,9 @@ const render = (criminals, allFacilities, allRelationships) => {
     const combinedCriminalHTML = convertedCriminals.join("");
 
     contentElement.innerHTML = `
-    ${showWitnessesButton()}
+    <div class="containerLeft__title">
     <h3>Glassdale Criminals</h3>
+    </div>
     <section class="containerLeft__list">
     ${combinedCriminalHTML}
     </section>
